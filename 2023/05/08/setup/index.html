@@ -24,7 +24,7 @@
 <meta property="og:description" content="搭建个人博客原本是&quot;云计算&quot;课程的一门小作业, 刚好借这个机会把个人博客给搭建好. 根据费曼学习法, 也督促我把所学的东西写写博客, 锻炼自己各方面的能力. 另外, 趁着刚把个人博客搭建好, 把搭建的步骤详细记录一下.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-08T01:08:56.000Z">
-<meta property="article:modified_time" content="2023-05-08T02:14:24.857Z">
+<meta property="article:modified_time" content="2023-05-08T02:27:23.527Z">
 <meta property="article:author" content="Yan Mingyuan">
 <meta property="article:tag" content="develop">
 <meta name="twitter:card" content="summary_large_image">
@@ -224,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          1.2k 字
         
       </span>
     
@@ -318,8 +318,14 @@
 </ul>
 <p>TODO: 其他更多操作有待补充…</p>
 <h2 id="部署网站">部署网站</h2>
-<p><a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment">https://hexo.io/docs/one-command-deployment</a></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 部署</span><br>hexo generate<br>hexo server<br><br><span class="hljs-comment"># 部署到Github Pages上, 别忘了参考github-pages官方指南</span><br>.github/workflows/pages.yml<br></code></pre></td></tr></table></figure>
+<p>本地测试</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">hexo generate<br>hexo server<br></code></pre></td></tr></table></figure>
+<p>reference</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment">https://hexo.io/docs/one-command-deployment</a></li>
+</ul>
+<p>准备工作</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm install hexo-deployer-git --save<br><span class="hljs-comment"># 修改_config.yml</span><br>hexo g -d<br></code></pre></td></tr></table></figure>
 
                 
               </div>
