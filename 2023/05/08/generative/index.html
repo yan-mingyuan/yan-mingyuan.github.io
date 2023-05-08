@@ -16,22 +16,21 @@
   <meta name="author" content="Yan Mingyuan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="搭建个人博客原本是&quot;云计算&quot;课程的一门小作业, 刚好借这个机会把个人博客给搭建好. 根据费曼学习法, 也督促我把所学的东西写写博客, 锻炼自己各方面的能力. 另外, 趁着刚把个人博客搭建好, 把搭建的步骤详细记录一下.">
+    <meta name="description" content="开个新坑, 打算有空写一写生成模型, 预计涉及PixelRNN, PixelCNN, GAN, VAE, Diffusion">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建个人博客步骤">
-<meta property="og:url" content="http://example.com/2023/05/08/setup/index.html">
+<meta property="og:title" content="生成模型">
+<meta property="og:url" content="http://example.com/2023/05/08/generative/index.html">
 <meta property="og:site_name" content="MingYuan&#39;s Blog">
-<meta property="og:description" content="搭建个人博客原本是&quot;云计算&quot;课程的一门小作业, 刚好借这个机会把个人博客给搭建好. 根据费曼学习法, 也督促我把所学的东西写写博客, 锻炼自己各方面的能力. 另外, 趁着刚把个人博客搭建好, 把搭建的步骤详细记录一下.">
+<meta property="og:description" content="开个新坑, 打算有空写一写生成模型, 预计涉及PixelRNN, PixelCNN, GAN, VAE, Diffusion">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-05-08T01:08:56.000Z">
-<meta property="article:modified_time" content="2023-05-08T02:52:16.087Z">
+<meta property="article:published_time" content="2023-05-08T02:43:26.000Z">
+<meta property="article:modified_time" content="2023-05-08T02:51:22.647Z">
 <meta property="article:author" content="Yan Mingyuan">
-<meta property="article:tag" content="develop">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>搭建个人博客步骤 - MingYuan&#39;s Blog</title>
+  <title>生成模型 - MingYuan&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -201,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="搭建个人博客步骤"></span>
+            <span id="subtitle" data-typed-text="生成模型"></span>
           
         </div>
 
@@ -212,7 +211,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-08 09:08" pubdate>
+        <time datetime="2023-05-08 10:43" pubdate>
           2023年5月8日 上午
         </time>
       </span>
@@ -224,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          286 字
         
       </span>
     
@@ -235,7 +234,7 @@
         
         
         
-          10 分钟
+          3 分钟
         
       </span>
     
@@ -273,61 +272,16 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">搭建个人博客步骤</h1>
+            <h1 style="display: none">生成模型</h1>
             
             
               <div class="markdown-body">
                 
-                <p>搭建个人博客原本是&quot;云计算&quot;课程的一门小作业, 刚好借这个机会把个人博客给搭建好. 根据费曼学习法, 也督促我把所学的东西写写博客, 锻炼自己各方面的能力. 另外, 趁着刚把个人博客搭建好, 把搭建的步骤详细记录一下.</p>
+                <p>开个新坑, 打算有空写一写生成模型, 预计涉及PixelRNN, PixelCNN, GAN, VAE, Diffusion</p>
 <span id="more"></span>
-<p>听起来云计算和个人博客似乎关联性不大?<br>
-逻辑链条是这样的, 云计算 -&gt; DevOps -&gt; 运维 -&gt; 持续集成 -&gt; Github Pages -&gt; 个人博客<br>
-总的来说, 搭建个人博客的框架网上以及提供了无数现成的方案了, 自己要做的其实并不多, 过程也是出乎意料地简单</p>
-<h1>搭建个人博客步骤</h1>
-<p>reference</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://docs.github.com/en/pages/quickstart">Quickstart for GitHub Pages</a></li>
-<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/github-pages.html">在 GitHub Pages 上部署 Hexo | Hexo</a></li>
-<li><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/start/">开始使用 | Hexo Fluid 用户手册 (fluid-dev.com)</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119089190">GitHub Pages + Hexo搭建个人博客网站-CSDN博客</a></li>
-</ul>
-<h2 id="环境准备">环境准备</h2>
-<p>prepared</p>
-<ul>
-<li>Ubuntu 18.04.6 LTS</li>
-<li>git version 2.17.1</li>
-</ul>
-<p>安装node.js</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh">curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -<br>sudo apt install nodejs<br>node --version  <span class="hljs-comment"># v14.21.3</span><br></code></pre></td></tr></table></figure>
-<p>安装hexo</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo npm install hexo-cli -g<br>hexo -v<br></code></pre></td></tr></table></figure>
-<h2 id="项目创建">项目创建</h2>
-<p>初始化项目</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh">hexo init hexo-blog<br><span class="hljs-built_in">cd</span> hexo-blog/<br>npm install<br></code></pre></td></tr></table></figure>
-<p>更改主题</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sh">wget https://github.com/fluid-dev/hexo-theme-fluid/archive/refs/tags/v1.9.4.tar.gz<br>tar -xzvf v1.9.4.tar.gz &amp;&amp; <span class="hljs-built_in">rm</span> v1.9.4.tar.gz<br><span class="hljs-built_in">mv</span> hexo-theme-fluid-1.9.4/ themes/fluid/<br><br>vim _config.yml  <span class="hljs-comment"># 相关更改见fluid仓库</span><br></code></pre></td></tr></table></figure>
-<p>其他配置</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 安装katex: 数学公式渲染器</span><br>npm i hexo-renderer-markdown-it-plus --save<br></code></pre></td></tr></table></figure>
-<h2 id="常用操作">常用操作</h2>
-<p>新建文章</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># hexo new [layout] &lt;title&gt;</span><br>hexo new page about<br>hexo new post setup<br></code></pre></td></tr></table></figure>
-<p>参考链接</p>
-<ul>
-<li>图片 -&gt; <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders.html">资源文件夹</a></li>
-<li>数学公式 -&gt; <a target="_blank" rel="noopener" href="https://fluid-dev.github.io/hexo-fluid-docs/guide/#latex-%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F">fluid | latex</a></li>
-</ul>
-<p>TODO: 其他更多操作有待补充…</p>
-<h2 id="部署网站">部署网站</h2>
-<p>本地测试</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">hexo generate<br>hexo server<br></code></pre></td></tr></table></figure>
-<p>reference</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment">https://hexo.io/docs/one-command-deployment</a></li>
-</ul>
-<p>准备工作</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm install hexo-deployer-git --save<br><span class="hljs-comment"># 修改_config.yml</span><br>hexo g -d<br></code></pre></td></tr></table></figure>
-<p>部署</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">hexo clean &amp;&amp; hexo deploy<br></code></pre></td></tr></table></figure>
+<p>不拘泥于讲单个模型, 侧重讲讲它们之间的关联, 看看能不能得到什么insight</p>
+<p>当然还涉及一些数学的东西, 从最简单的EM, 到变分推断, 据说后面还有什么郎之万方程? 不保证学得懂, 只是开个坑鞭策一下自己.</p>
+<p>至于为什么对生成模型感兴趣呢? 是因为前段时间看了点GAN的东西, 发现一些在其他网络中存在但是并不重要的东西, 比如L2正则化, 在比较难训练的生成模型当中被放得很大, 甚至可以被非常数学化、公式化地解决. 那意味着从生成模型可以获得很多普适的洞见, 推广到很多其他的事物上.</p>
 
                 
               </div>
@@ -337,13 +291,6 @@
               <div class="post-metas my-3">
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/develop/">#develop</a>
-      
-    </div>
-  
 </div>
 
 
@@ -352,8 +299,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>搭建个人博客步骤</div>
-      <div>http://example.com/2023/05/08/setup/</div>
+      <div>生成模型</div>
+      <div>http://example.com/2023/05/08/generative/</div>
     </div>
     <div class="license-meta">
       
@@ -397,18 +344,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/08/bayes/" title="数据有效性与贝叶斯推断">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">数据有效性与贝叶斯推断</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/07/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2023/05/08/bayes/" title="数据有效性与贝叶斯推断">
+                        <span class="hidden-mobile">数据有效性与贝叶斯推断</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
