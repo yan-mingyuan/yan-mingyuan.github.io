@@ -19,24 +19,24 @@
     <meta name="description" content="数据伦理课的小作业, 作业要求是200字左右稍微做些讨论即可. 刚好前段时间对变分推断非常感兴趣, 其中非常重要的贝叶斯推断和共轭分布的技巧可以放到这里. 于是便顺手做了一些小小的推导, 并使用代码进行了一定的测试.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据有效性与贝叶斯推断">
-<meta property="og:url" content="http://example.com/2023/05/08/bayes/index.html">
+<meta property="og:url" content="https://yan-mingyuan.github.io/2023/05/08/bayes/index.html">
 <meta property="og:site_name" content="MingYuan&#39;s Blog">
 <meta property="og:description" content="数据伦理课的小作业, 作业要求是200字左右稍微做些讨论即可. 刚好前段时间对变分推断非常感兴趣, 其中非常重要的贝叶斯推断和共轭分布的技巧可以放到这里. 于是便顺手做了一些小小的推导, 并使用代码进行了一定的测试.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2023/05/08/bayes/img/result_1683425601.png">
-<meta property="og:image" content="http://example.com/2023/05/08/bayes/img/result_1683425601.png">
-<meta property="og:image" content="http://example.com/2023/05/08/bayes/img/result_1683425679.png">
-<meta property="og:image" content="http://example.com/2023/05/08/bayes/img/result_1683425691.png">
-<meta property="og:image" content="http://example.com/2023/05/08/bayes/img/result_1683425702.png">
-<meta property="og:image" content="http://example.com/2023/05/08/bayes/img/result_1683425727.png">
-<meta property="og:image" content="http://example.com/2023/05/08/bayes/img/result_1683425746.png">
-<meta property="og:image" content="http://example.com/2023/05/08/bayes/img/result_1683425761.png">
+<meta property="og:image" content="https://yan-mingyuan.github.io/2023/05/08/bayes/img/result_1683425601.png">
+<meta property="og:image" content="https://yan-mingyuan.github.io/2023/05/08/bayes/img/result_1683425601.png">
+<meta property="og:image" content="https://yan-mingyuan.github.io/2023/05/08/bayes/img/result_1683425679.png">
+<meta property="og:image" content="https://yan-mingyuan.github.io/2023/05/08/bayes/img/result_1683425691.png">
+<meta property="og:image" content="https://yan-mingyuan.github.io/2023/05/08/bayes/img/result_1683425702.png">
+<meta property="og:image" content="https://yan-mingyuan.github.io/2023/05/08/bayes/img/result_1683425727.png">
+<meta property="og:image" content="https://yan-mingyuan.github.io/2023/05/08/bayes/img/result_1683425746.png">
+<meta property="og:image" content="https://yan-mingyuan.github.io/2023/05/08/bayes/img/result_1683425761.png">
 <meta property="article:published_time" content="2023-05-08T01:23:40.000Z">
 <meta property="article:modified_time" content="2023-05-08T02:10:27.187Z">
 <meta property="article:author" content="Yan Mingyuan">
 <meta property="article:tag" content="math">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2023/05/08/bayes/img/result_1683425601.png">
+<meta name="twitter:image" content="https://yan-mingyuan.github.io/2023/05/08/bayes/img/result_1683425601.png">
   
   
   
@@ -78,7 +78,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"yan-mingyuan.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -431,7 +431,7 @@ Var(\theta|X)
   <div class="license-box my-3">
     <div class="license-title">
       <div>数据有效性与贝叶斯推断</div>
-      <div>http://example.com/2023/05/08/bayes/</div>
+      <div>https://yan-mingyuan.github.io/2023/05/08/bayes/</div>
     </div>
     <div class="license-meta">
       
